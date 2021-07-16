@@ -1,5 +1,5 @@
 import React from 'react'
-import { scaleLinear, scaleTime, extent, format, timeFormat } from 'd3'
+import { scaleLinear, scaleTime, extent, timeFormat } from 'd3'
 import AxisBottom from './components/AxisBottom'
 import AxisLeft from './components/AxisLeft'
 import Marks from './components/Marks'
@@ -46,6 +46,7 @@ const App = () => {
   const yScale = scaleLinear() //
     .domain(extent(data, yValue))
     .range([innerHeight, 0])
+    .nice()
 
   const xAxisTickFormat = timeFormat('%a')
 
@@ -86,7 +87,7 @@ const App = () => {
           xValue={xValue}
           yValue={yValue}
           tooltipFormat={xAxisTickFormat}
-          circleRadius={5}
+          circleRadius={3}
         />
       </g>
     </svg>
