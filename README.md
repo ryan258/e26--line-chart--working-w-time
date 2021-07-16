@@ -1,1 +1,1 @@
-A scatter plot of the [Iris Data set](https://archive.ics.uci.edu/ml/datasets/iris) and [this data set](https://gist.githubusercontent.com/curran/a08a1080b88344b0c8a7/raw/0e7a9b0a5d22642a06d3d5b9bcbad9890c8ee534/iris.csv) specifically.
+A line chart of the [Data Canvas Sense Your City Data Set](https://grayarea.org/initiative/data-canvas-sense-your-city/) and [this data set](https://gist.githubusercontent.com/curran/90240a6d88bdb1411467b21ea0769029/raw/7d4c3914cc6a29a7f5165f7d5d82b735d97bcfe4/week_temperature_sf.csv) specifically.

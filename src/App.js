@@ -1,5 +1,5 @@
 import React from 'react'
-import { scaleLinear, extent, format } from 'd3'
+import { scaleLinear, scaleTime, extent, format, timeFormat } from 'd3'
 import AxisBottom from './components/AxisBottom'
 import AxisLeft from './components/AxisLeft'
 import Marks from './components/Marks'
@@ -32,23 +32,22 @@ const App = () => {
   const innerHeight = height - margin.top - margin.bottom
   const innerWidth = width - margin.right - margin.left
 
-  const xValue = (d) => d.petal_length
-  const xAxisLabel = 'Petal Length'
+  const xValue = (d) => d.timestamp
+  const xAxisLabel = 'Time'
 
-  const yValue = (d) => d.sepal_width
-  const yAxisLabel = 'Sepal Width'
+  const yValue = (d) => d.temperature
+  const yAxisLabel = 'Temperature'
 
-  const xScale = scaleLinear() //
+  const xScale = scaleTime() //
     .domain(extent(data, xValue))
     .range([0, innerWidth])
     .nice()
 
   const yScale = scaleLinear() //
     .domain(extent(data, yValue))
-    .range([0, innerHeight])
+    .range([innerHeight, 0])
 
-  const siFormat = format('.2s')
-  const xAxisTickFormat = (tickValue) => siFormat(tickValue).replace('G', 'B')
+  const xAxisTickFormat = timeFormat('%a')
 
   // Fortunately scales can tell us their ticks
   // console.log(xScale.ticks())
